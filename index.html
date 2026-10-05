@@ -1,52 +1,355 @@
 <!doctype html>
-  <html lang="en">
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Meridian — Early Signup</title>
-<meta name="description" content="Join the Meridian entertainment service-readiness queue. No payment is required to sign up.">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Meridian Entertainment Jamaica | Guided Entertainment Setup & Support</title>
+<meta name="description" content="Meridian Entertainment helps people in Jamaica explore entertainment options with guided setup, readiness checks, transparent next steps and local support. Join the readiness queue with no payment required.">
+<link rel="canonical" href="https://join.streammeridian.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Meridian Entertainment Jamaica">
+<meta property="og:description" content="A guided, Jamaica-focused entertainment experience built around readiness, setup support and clear next steps.">
+<meta property="og:url" content="https://join.streammeridian.com/">
+<meta name="twitter:card" content="summary">
 <style>
-:root{font-family:Arial,Helvetica,sans-serif;line-height:1.5;color:#17231d;background:#f4f7f5}*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}.hero{padding:32px 0 28px}.eyebrow{font-weight:700;letter-spacing:.12em;font-size:.78rem;text-transform:uppercase;color:#0c6b48}h1{font-size:clamp(2rem,6vw,4.4rem);line-height:1.02;margin:.4rem 0 1rem;max-width:850px}h2{margin-top:0}.lead{font-size:1.15rem;max-width:720px}.alert{background:#fff4dc;border:2px solid #9a6500;border-radius:14px;padding:18px 20px;margin:24px 0;font-size:1rem}.alert strong{display:block;font-size:1.08rem;margin-bottom:4px}.notice{background:#eaf5ef;border:1px solid #b9d9c7;border-radius:14px;padding:16px;margin:24px 0}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.btn{display:inline-block;padding:13px 18px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid #0c6b48}.primary{background:#0c6b48;color:white}.secondary{color:#0c6b48;background:white}.disabled{color:#68756e;background:#eef1ef;border-color:#aeb8b2;cursor:not-allowed}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}.card{background:white;border:1px solid #dfe5e2;border-radius:14px;padding:20px}.price{font-weight:800;font-size:1.35rem}.fine{font-size:.88rem;color:#5d6b64}.steps{background:white;border-radius:14px;padding:22px;border:1px solid #dfe5e2}.steps li{margin:.65rem 0}footer{padding:34px 0;color:#5d6b64;font-size:.9rem}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding-top:20px}}@media(prefers-color-scheme:dark){:root{color:#e8eee9;background:#101713}.card,.steps,.secondary{background:#17231d;color:#e8eee9;border-color:#31453a}.notice{background:#173a2b;border-color:#315f48}.alert{background:#3a2b0c;border-color:#d6a23b;color:#fff4dc}.disabled{background:#242b27;color:#aeb8b2;border-color:#56645c}.fine,footer{color:#b8c3bd}}
+:root{
+  --bg:#071511;--surface:#0d211a;--surface2:#123126;--text:#f5f1e7;--muted:#b8c7c0;
+  --teal:#29c58d;--teal-dark:#159566;--champagne:#d8bf85;--line:#25463a;
+  --warning:#ffd98a;--warning-bg:#33280d;--white:#fff;--shadow:0 18px 50px rgba(0,0,0,.24);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  line-height:1.55;color:var(--text);background:var(--bg)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 85% -10%,rgba(41,197,141,.12),transparent 34rem),
+linear-gradient(180deg,#071511 0%,#091a15 55%,#071511 100%);color:var(--text)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--champagne);outline-offset:4px}
+.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(7,21,17,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:38px;height:38px;border:1px solid var(--champagne);border-radius:50%;display:grid;place-items:center;font-weight:900;color:var(--champagne);letter-spacing:-.08em}
+.brand-name{font-weight:800;letter-spacing:.14em;font-size:.9rem}
+.navlinks{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.navlinks a{text-decoration:none;color:var(--muted);font-size:.94rem}
+.navlinks a:hover{color:var(--white)}
+.nav-cta{padding:10px 14px!important;border:1px solid var(--teal);border-radius:10px;color:var(--white)!important}
+.alert{margin:24px auto 0;background:var(--warning-bg);border:1px solid #8d6b20;border-left:5px solid var(--warning);border-radius:14px;padding:16px 18px;color:#fff3d6}
+.alert strong{display:block;color:var(--warning);margin-bottom:3px}
+.hero{padding:84px 0 64px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:54px;align-items:center}
+.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+h1,h2,h3{line-height:1.1;margin-top:0}
+h1{font-size:clamp(2.65rem,7vw,5.6rem);letter-spacing:-.055em;margin:.5rem 0 1.2rem;max-width:820px}
+h2{font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.03em;margin-bottom:16px}
+h3{font-size:1.16rem;margin-bottom:8px}
+.lead{font-size:clamp(1.05rem,2.2vw,1.28rem);color:#dce6e1;max-width:720px}
+.subtle{color:var(--muted)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:11px;text-decoration:none;font-weight:800;border:1px solid var(--teal)}
+.primary{background:var(--teal);color:#062217}
+.primary:hover{background:#39d59c}
+.secondary{background:transparent;color:var(--text);border-color:#476558}
+.disabled{background:#1a2822;color:#9fb0a8;border-color:#3f5149;cursor:not-allowed}
+.hero-card{background:linear-gradient(150deg,var(--surface2),#0a1c16);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.hero-card .metric{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.hero-card .metric:last-child{border-bottom:0}
+.icon{flex:0 0 38px;height:38px;border-radius:10px;background:rgba(41,197,141,.12);border:1px solid rgba(41,197,141,.28);display:grid;place-items:center;color:var(--teal);font-weight:900}
+.section{padding:72px 0}
+.section.alt{background:rgba(255,255,255,.025);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.section-head{max-width:760px;margin-bottom:32px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card p{margin-bottom:0;color:var(--muted)}
+.step{position:relative;padding-top:54px}
+.step-no{position:absolute;top:18px;left:24px;font-size:.78rem;font-weight:900;letter-spacing:.12em;color:var(--champagne)}
+.quote{border-left:3px solid var(--champagne);padding:6px 0 6px 18px;color:#eee4cf;font-size:1.12rem}
+.package{display:flex;flex-direction:column}
+.price{font-size:1.55rem;font-weight:900;margin:.35rem 0}
+.package .btn{margin-top:auto}
+.pill{display:inline-block;width:max-content;padding:5px 9px;border-radius:999px;background:rgba(216,191,133,.12);border:1px solid rgba(216,191,133,.3);color:var(--champagne);font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.checklist{display:grid;gap:11px;margin:18px 0 0;padding:0;list-style:none}
+.checklist li{display:flex;gap:10px;color:var(--muted)}
+.checklist li::before{content:"✓";color:var(--teal);font-weight:900}
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:journey}
+.journey>div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;min-height:164px}
+.journey>div::before{counter-increment:journey;content:counter(journey);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--teal);color:#062217;font-weight:900;margin-bottom:14px}
+.faq{display:grid;gap:10px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+summary{cursor:pointer;font-weight:800}
+details p{color:var(--muted);margin:12px 0 0}
+.trust{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch}
+.trust-panel{background:linear-gradient(150deg,#173e30,#0c231a);border:1px solid #315c4a;border-radius:22px;padding:30px}
+.support-box{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px}
+.support-box a{color:var(--teal)}
+.cta{padding:38px;border-radius:24px;background:linear-gradient(135deg,#153c2e,#0a241b);border:1px solid #2d5e49;display:flex;justify-content:space-between;gap:28px;align-items:center}
+.cta h2{margin-bottom:8px}
+footer{padding:42px 0 54px;color:var(--muted);font-size:.9rem}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+.footer-links a{color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted)}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:900px){
+  .hero,.trust{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.journey{grid-template-columns:1fr 1fr}.navlinks a:not(.nav-cta){display:none}
+}
+@media(max-width:620px){
+  .wrap{width:min(100% - 22px,1120px)}.hero{padding:52px 0 42px}.section{padding:54px 0}.grid,.grid.two,.journey{grid-template-columns:1fr}.cta{padding:26px;align-items:flex-start;flex-direction:column}.brand-name{font-size:.82rem}.alert{margin-top:14px}.hero-card{padding:22px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
-  </head>
-  <body>
-  <main class="wrap">
-  <div class="alert" role="status" aria-live="polite">
-    <strong>Temporary account sign-up pause</strong>
-    Meridian is live, but full account creation is temporarily paused while we complete a reliability fix to ensure every signup is saved correctly. You can still join the readiness queue below, and no payment is required. If you already attempted full account signup, you do not need to try again right now.
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Meridian Entertainment",
+  "url":"https://join.streammeridian.com/",
+  "email":"support@streammeridian.com",
+  "areaServed":"JM"
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Meridian Entertainment home">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name">MERIDIAN ENTERTAINMENT</span>
+    </a>
+    <nav class="navlinks" aria-label="Primary navigation">
+      <a href="#what">What is Meridian?</a>
+      <a href="#how">How it works</a>
+      <a href="#packages">Packages</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" id="joinTop" href="https://form.jotform.com/262766730209057">Join readiness</a>
+    </nav>
   </div>
-  <section class="hero">
-  <div class="eyebrow">Meridian Entertainment · Early Signup</div>
-<h1>Keep what you already use. Begin your Meridian journey now.</h1>
-  <p class="lead">You do not need to cancel cable, streaming, or any entertainment service to join Meridian. Choose the package that interests you and enter the service-readiness queue. <strong>No payment is required to sign up.</strong></p>
-<div class="actions">
-  <a id="join" class="btn primary" href="https://form.jotform.com/262766730209057">Join the readiness queue</a>
-  <span id="account" class="btn disabled" aria-disabled="true">Full account signup temporarily paused</span>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="alert" role="status" aria-live="polite">
+      <strong>Temporary account sign-up pause</strong>
+      Meridian is live, but full account creation is temporarily paused while we complete a reliability fix to make sure account signups are saved correctly. You can still join the readiness queue below, and no payment is required. If you already attempted full account signup, you do not need to try again right now.
+    </div>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Jamaica-focused entertainment guidance & support</div>
+        <h1 id="hero-title">Entertainment should feel simpler.</h1>
+        <p class="lead"><strong>Meridian Entertainment</strong> is a guided entertainment service designed to help people in Jamaica understand their options, check whether their setup is ready, choose a suitable package, and get human help through the journey.</p>
+        <p class="subtle">You do not need to cancel cable, streaming, or another service that already works for you just to explore Meridian.</p>
+        <div class="actions">
+          <a id="join" class="btn primary" href="https://form.jotform.com/262766730209057">Join the readiness queue</a>
+          <span class="btn disabled" aria-disabled="true">Full account signup temporarily paused</span>
+        </div>
+        <p class="note">Readiness signup does not activate service and does not create a charge.</p>
+      </div>
+      <aside class="hero-card" aria-label="Meridian highlights">
+        <div class="eyebrow">Built around the customer</div>
+        <div class="metric"><span class="icon" aria-hidden="true">1</span><div><strong>Guided setup</strong><div class="subtle">Clear steps instead of leaving you to figure everything out alone.</div></div></div>
+        <div class="metric"><span class="icon" aria-hidden="true">2</span><div><strong>Readiness before commitment</strong><div class="subtle">We check the request and supported setup before asking you to move forward.</div></div></div>
+        <div class="metric"><span class="icon" aria-hidden="true">3</span><div><strong>Jamaica-first support</strong><div class="subtle">A local-first approach to questions, setup and customer guidance.</div></div></div>
+        <div class="metric"><span class="icon" aria-hidden="true">4</span><div><strong>Bandwidth-aware planning</strong><div class="subtle">Your internet conditions and device setup matter when choosing the right experience.</div></div></div>
+      </aside>
+    </section>
   </div>
-  <div class="notice"><strong>What happens next:</strong> Meridian records your interest and contacts you when activation is available. Signup alone does not activate service or create a charge.</div>
+
+  <section id="what" class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What is Meridian?</div>
+        <h2>A guided way to discover, prepare for and use entertainment services.</h2>
+        <p class="lead">Meridian brings the decision-making, readiness check and support process into one clearer experience. Instead of starting with a payment or an oversized list of promises, we start with what you actually need, the devices you use, your internet conditions and the type of entertainment experience you want.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Understand your options</h3><p>We help make the choices easier to understand so you can compare packages and decide what fits your household without unnecessary pressure.</p></article>
+        <article class="card"><h3>Prepare the right setup</h3><p>Meridian uses a readiness-first approach so device, connectivity and setup questions can be addressed before activation.</p></article>
+        <article class="card"><h3>Get help when you need it</h3><p>Support is part of the experience. If something is unclear, Meridian is designed to give you a path to real guidance instead of leaving you alone with technical jargon.</p></article>
+      </div>
+    </div>
   </section>
-  <section>
-  <div class="grid">
-  <article class="card"><div class="eyebrow">Essential</div><h2>Meridian Essential</h2><p class="price">J$2,500 / month*</p><p>Core US, Caribbean and English entertainment categories.</p></article>
-  <article class="card"><div class="eyebrow">Family</div><h2>Meridian Family</h2><p class="price">J$4,500 / month*</p><p>Broader household-oriented categories including additional UK, Canada and Caribbean options.</p></article>
-  <article class="card"><div class="eyebrow">Max</div><h2>Meridian Max</h2><p class="price">J$5,500 / month*</p><p>Broader package with sports-mix and higher-resolution categories where supported.</p></article>
-  </div>
-  <p class="fine">*Current launch pricing concepts. Package categories, availability, device support and pricing are confirmed before activation and may change while final readiness work is completed. No payment is required to join the readiness queue.</p>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why Meridian?</div>
+        <h2>Less confusion. More clarity before you commit.</h2>
+        <p class="lead">Entertainment choices can become complicated quickly: different apps, devices, internet speeds, account requirements and packages. Meridian is designed to make that journey easier to navigate.</p>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>Designed for real households</h3>
+          <ul class="checklist">
+            <li>People comparing entertainment options without wanting to cancel what they already use.</li>
+            <li>Households that want help understanding setup and readiness.</li>
+            <li>First-time streamers who want a guided process.</li>
+            <li>People who prefer a clear support route instead of trial-and-error setup.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>What Meridian does differently</h3>
+          <ul class="checklist">
+            <li>Readiness before payment or activation.</li>
+            <li>Clearer expectations about what happens next.</li>
+            <li>Bandwidth-aware recommendations rather than pretending every connection behaves the same.</li>
+            <li>Customer support and setup guidance built into the journey.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
   </section>
-  <section class="steps">
-  <h2>Three simple steps</h2>
-<ol><li>Scan the Meridian QR or open this page.</li><li>Join the readiness queue and tell us which package interests you.</li><li>Meridian contacts you when activation is available and confirms the supported setup.</li></ol>
-  <p><strong>Already have cable or another streaming service?</strong> Keep it. You can compare your options after Meridian is ready for you.</p>
+
+  <section id="how" class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How Meridian works</div>
+        <h2>From interest to supported activation, one stage at a time.</h2>
+        <p class="lead">The process is intentionally staged so that an enquiry is never confused with a payment or an activation.</p>
+      </div>
+      <div class="journey">
+        <div><strong>Tell us what you need</strong><p class="subtle">Join the readiness queue and share the information needed to understand your request.</p></div>
+        <div><strong>Readiness review</strong><p class="subtle">We assess the request, device and setup considerations that are relevant to moving forward.</p></div>
+        <div><strong>Confirm the supported setup</strong><p class="subtle">Availability, package details and supported setup are confirmed before activation.</p></div>
+        <div><strong>Official payment when eligible</strong><p class="subtle">If payment becomes due, use only the official Meridian payment instruction supplied for your request.</p></div>
+        <div><strong>Activation & support</strong><p class="subtle">Once the required steps are completed and verified, Meridian supports the customer through activation and ongoing use.</p></div>
+      </div>
+    </div>
   </section>
-  <footer>Meridian Entertainment · Early signup and service-readiness onboarding. Never send passwords, OTPs, PINs, card details or banking credentials through a referral contact.</footer>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Your connection matters</div>
+        <h2>Entertainment works best when the setup matches the connection.</h2>
+        <p class="lead">Meridian considers internet conditions as part of the readiness conversation. We do not promise zero buffering or identical performance on every network, because real-world connections, Wi-Fi conditions, devices and content quality can all affect playback.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Bandwidth-aware choices</h3><p>Where relevant, we can guide customers toward a setup that better matches the quality and stability of their connection.</p></article>
+        <article class="card"><h3>Device readiness</h3><p>Device compatibility is confirmed where applicable rather than assuming that every device supports every experience.</p></article>
+        <article class="card"><h3>Practical support</h3><p>If a setup issue occurs, the goal is to identify the cause and the next useful action instead of hiding behind generic advice.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Readiness packages</div>
+        <h2>Choose the level that interests you.</h2>
+        <p class="lead">These package concepts help Meridian understand what type of experience you are interested in during readiness. Final availability, exact categories, device support and price are confirmed before activation.</p>
+      </div>
+      <div class="grid">
+        <article class="card package">
+          <span class="pill">Essential</span>
+          <h3>Meridian Essential</h3>
+          <p class="price">J$2,500 / month*</p>
+          <p>Core US, Caribbean and English entertainment categories.</p>
+        </article>
+        <article class="card package">
+          <span class="pill">Family</span>
+          <h3>Meridian Family</h3>
+          <p class="price">J$4,500 / month*</p>
+          <p>Broader household-oriented categories including additional UK, Canada and Caribbean options.</p>
+        </article>
+        <article class="card package">
+          <span class="pill">Max</span>
+          <h3>Meridian Max</h3>
+          <p class="price">J$5,500 / month*</p>
+          <p>Broader package with sports-mix and higher-resolution categories where supported.</p>
+        </article>
+      </div>
+      <p class="note">*Launch package concepts shown for readiness. Final pricing, supported setup and availability are confirmed before activation. Joining the readiness queue does not create a charge.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap trust">
+      <div class="trust-panel">
+        <div class="eyebrow">Trust & safety</div>
+        <h2>Clear boundaries protect customers.</h2>
+        <ul class="checklist">
+          <li>A readiness signup is not a payment and is not an activation.</li>
+          <li>Use only official Meridian payment instructions when payment is actually due.</li>
+          <li>Freelancers and referral partners must not collect Meridian customer money into their own accounts.</li>
+          <li>Never send passwords, PINs, OTP codes, card details or online-banking credentials to a referral contact.</li>
+          <li>If something is not yet confirmed, Meridian should say so rather than overpromise.</li>
+        </ul>
+      </div>
+      <aside class="support-box">
+        <div class="eyebrow">Support</div>
+        <h2>Need help?</h2>
+        <p class="subtle">Questions about readiness, setup or the next step can be sent to Meridian Support.</p>
+        <p><a href="mailto:support@streammeridian.com">support@streammeridian.com</a></p>
+        <p class="note">Do not email passwords, OTPs, PINs or payment-card/banking credentials.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="faq" class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Frequently asked questions</div>
+        <h2>Before you join.</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Do I have to cancel my current cable or streaming service?</summary><p>No. Meridian does not require you to cancel something that already works for you just to join the readiness queue or evaluate your options.</p></details>
+        <details><summary>Does joining the readiness queue cost anything?</summary><p>No payment is required to join the readiness queue. Readiness signup does not activate a service or create a charge.</p></details>
+        <details><summary>When do I pay?</summary><p>If your request becomes eligible to move forward, Meridian will provide the official next step and any applicable payment instruction. Do not pay a freelancer or referral partner directly.</p></details>
+        <details><summary>Will Meridian work on every device?</summary><p>Device support depends on the specific setup. Meridian confirms supported options where applicable instead of promising universal compatibility.</p></details>
+        <details><summary>What internet speed do I need?</summary><p>There is no single answer for every household. Connection speed, stability, Wi-Fi conditions, device capability and desired quality can all matter. Meridian uses a readiness-first approach so those factors can be considered.</p></details>
+        <details><summary>Does Meridian guarantee no buffering?</summary><p>No responsible service can guarantee identical performance on every connection. Meridian focuses on realistic setup guidance and troubleshooting rather than making that promise.</p></details>
+        <details><summary>What if a freelancer referred me?</summary><p>Use the freelancer's official Meridian referral link or code when joining the readiness queue so the referral can be attributed correctly. The freelancer should not collect your Meridian payment or sensitive credentials.</p></details>
+        <details><summary>Why is full account signup paused?</summary><p>Meridian is correcting an account-signup reliability issue so completed signups can be tracked and saved consistently. Readiness registration remains available while that work is completed.</p></details>
+      </div>
+      <p class="note" style="margin-top:18px"><a href="/faq.html">View the dedicated FAQ page</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <div class="eyebrow">Start with readiness</div>
+          <h2>Tell Meridian what you are looking for.</h2>
+          <p class="subtle">There is no need to cancel your current service or pay just to join the readiness queue.</p>
+        </div>
+        <a id="joinBottom" class="btn primary" href="https://form.jotform.com/262766730209057">Join the readiness queue</a>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <strong>Meridian Entertainment</strong>
+    <div>Jamaica-focused readiness, setup guidance and customer support.</div>
+    <div class="footer-links">
+      <a href="/faq.html">FAQ</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:support@streammeridian.com">Support</a>
+    </div>
+  </div>
+</footer>
+
 <script>
 (function(){
-  const q=new URLSearchParams(location.search); const ref=(q.get('ref')||'').trim().toUpperCase();
-  if(!ref)return;
-  const j=document.getElementById('join');
-  j.href='https://form.jotform.com/262766730209057?q7_textbox5='+encodeURIComponent(ref);
+  const q=new URLSearchParams(location.search);
+  const refs=q.getAll('ref');
+  if(refs.length!==1)return;
+  const raw=refs[0].trim();
+  if(!raw || raw.length>40 || !/^[A-Za-z0-9-]+$/.test(raw))return;
+  const ref=raw.toUpperCase();
+  if(!/^MER-[A-Z0-9]+(?:-[A-Z0-9]+)+$/.test(ref))return;
+  const url='https://form.jotform.com/262766730209057?q7_textbox5='+encodeURIComponent(ref);
+  ['join','joinTop','joinBottom'].forEach(function(id){
+    const el=document.getElementById(id);
+    if(el)el.href=url;
+  });
 })();
 </script>
-  </body></html>
+</body>
+</html>
