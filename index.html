@@ -7,18 +7,22 @@
   <title>Meridian — Early Signup</title>
 <meta name="description" content="Join the Meridian entertainment service-readiness queue. No payment is required to sign up.">
 <style>
-:root{font-family:Arial,Helvetica,sans-serif;line-height:1.5;color:#17231d;background:#f4f7f5}*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}.hero{padding:56px 0 28px}.eyebrow{font-weight:700;letter-spacing:.12em;font-size:.78rem;text-transform:uppercase;color:#0c6b48}h1{font-size:clamp(2rem,6vw,4.4rem);line-height:1.02;margin:.4rem 0 1rem;max-width:850px}h2{margin-top:0}.lead{font-size:1.15rem;max-width:720px}.notice{background:#eaf5ef;border:1px solid #b9d9c7;border-radius:14px;padding:16px;margin:24px 0}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.btn{display:inline-block;padding:13px 18px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid #0c6b48}.primary{background:#0c6b48;color:white}.secondary{color:#0c6b48;background:white}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}.card{background:white;border:1px solid #dfe5e2;border-radius:14px;padding:20px}.price{font-weight:800;font-size:1.35rem}.fine{font-size:.88rem;color:#5d6b64}.steps{background:white;border-radius:14px;padding:22px;border:1px solid #dfe5e2}.steps li{margin:.65rem 0}footer{padding:34px 0;color:#5d6b64;font-size:.9rem}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding-top:32px}}@media(prefers-color-scheme:dark){:root{color:#e8eee9;background:#101713}.card,.steps,.secondary{background:#17231d;color:#e8eee9;border-color:#31453a}.notice{background:#173a2b;border-color:#315f48}.fine,footer{color:#b8c3bd}}
+:root{font-family:Arial,Helvetica,sans-serif;line-height:1.5;color:#17231d;background:#f4f7f5}*{box-sizing:border-box}body{margin:0}.wrap{max-width:980px;margin:auto;padding:24px}.hero{padding:32px 0 28px}.eyebrow{font-weight:700;letter-spacing:.12em;font-size:.78rem;text-transform:uppercase;color:#0c6b48}h1{font-size:clamp(2rem,6vw,4.4rem);line-height:1.02;margin:.4rem 0 1rem;max-width:850px}h2{margin-top:0}.lead{font-size:1.15rem;max-width:720px}.alert{background:#fff4dc;border:2px solid #9a6500;border-radius:14px;padding:18px 20px;margin:24px 0;font-size:1rem}.alert strong{display:block;font-size:1.08rem;margin-bottom:4px}.notice{background:#eaf5ef;border:1px solid #b9d9c7;border-radius:14px;padding:16px;margin:24px 0}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.btn{display:inline-block;padding:13px 18px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid #0c6b48}.primary{background:#0c6b48;color:white}.secondary{color:#0c6b48;background:white}.disabled{color:#68756e;background:#eef1ef;border-color:#aeb8b2;cursor:not-allowed}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}.card{background:white;border:1px solid #dfe5e2;border-radius:14px;padding:20px}.price{font-weight:800;font-size:1.35rem}.fine{font-size:.88rem;color:#5d6b64}.steps{background:white;border-radius:14px;padding:22px;border:1px solid #dfe5e2}.steps li{margin:.65rem 0}footer{padding:34px 0;color:#5d6b64;font-size:.9rem}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding-top:20px}}@media(prefers-color-scheme:dark){:root{color:#e8eee9;background:#101713}.card,.steps,.secondary{background:#17231d;color:#e8eee9;border-color:#31453a}.notice{background:#173a2b;border-color:#315f48}.alert{background:#3a2b0c;border-color:#d6a23b;color:#fff4dc}.disabled{background:#242b27;color:#aeb8b2;border-color:#56645c}.fine,footer{color:#b8c3bd}}
 </style>
   </head>
   <body>
   <main class="wrap">
+  <div class="alert" role="status" aria-live="polite">
+    <strong>Temporary account sign-up pause</strong>
+    Meridian is live, but full account creation is temporarily paused while we complete a reliability fix to ensure every signup is saved correctly. You can still join the readiness queue below, and no payment is required. If you already attempted full account signup, you do not need to try again right now.
+  </div>
   <section class="hero">
   <div class="eyebrow">Meridian Entertainment · Early Signup</div>
 <h1>Keep what you already use. Begin your Meridian journey now.</h1>
   <p class="lead">You do not need to cancel cable, streaming, or any entertainment service to join Meridian. Choose the package that interests you and enter the service-readiness queue. <strong>No payment is required to sign up.</strong></p>
 <div class="actions">
   <a id="join" class="btn primary" href="https://form.jotform.com/262766730209057">Join the readiness queue</a>
-  <a id="account" class="btn secondary" href="https://meridian-entertainment-pilot-k5qdgs.v2.appdeploy.ai/">Open full Meridian account</a>
+  <span id="account" class="btn disabled" aria-disabled="true">Full account signup temporarily paused</span>
   </div>
   <div class="notice"><strong>What happens next:</strong> Meridian records your interest and contacts you when activation is available. Signup alone does not activate service or create a charge.</div>
   </section>
@@ -39,11 +43,10 @@
 </main>
 <script>
 (function(){
-   const q=new URLSearchParams(location.search); const ref=(q.get('ref')||'').trim().toUpperCase();
- if(!ref)return;
- const j=document.getElementById('join'); const a=document.getElementById('account');
- j.href='https://form.jotform.com/262766730209057?q7_textbox5='+encodeURIComponent(ref);
- a.href='https://meridian-entertainment-pilot-k5qdgs.v2.appdeploy.ai/?ref='+encodeURIComponent(ref);
+  const q=new URLSearchParams(location.search); const ref=(q.get('ref')||'').trim().toUpperCase();
+  if(!ref)return;
+  const j=document.getElementById('join');
+  j.href='https://form.jotform.com/262766730209057?q7_textbox5='+encodeURIComponent(ref);
 })();
 </script>
   </body></html>
